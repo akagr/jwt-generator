@@ -13,4 +13,9 @@ var token = {
   'iat': Date.now()
 }
 
-console.log(jwt.sign(token, secret));
+console.log(jwt.sign(token, secret, {
+  header: {
+    'alg': 'HS256',
+    'typ': undefined
+  }
+}));
