@@ -9,11 +9,10 @@ var token = {
     'valid': true,
     'validityReason': null,
     'masterLoginId': email
-  },
-  'iat': Date.now()
+  }
 }
 
-console.log(jwt.sign(token, secret, {
+console.log(jwt.sign(token, Buffer.from(secret, 'base64'), {
   header: {
     'alg': 'HS256',
     'typ': undefined
